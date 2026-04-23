@@ -1,0 +1,104 @@
+[
+  {
+    "id": "20260416T125928_corn",
+    "created_at_utc": "2026-04-16T19:59:28.921876+00:00",
+    "source_image": "/storage/emulated/0/Download/—Pngtree—fresh corn cob with water_22630835.png",
+    "model": "gemma4:e2b",
+    "analysis": {
+      "food_item": "Corn",
+      "food_category": "Grain",
+      "serving_estimate": "1 ear (approx. 130g cooked)",
+      "ingredients_or_components": [
+        "Corn kernels"
+      ],
+      "estimated_macros": {
+        "calories_kcal": 167,
+        "protein_g": 3.5,
+        "carbs_g": 38.1,
+        "fat_g": 1.3,
+        "fiber_g": 3.8,
+        "sugar_g": 3.3,
+        "sodium_mg": 110
+      },
+      "health_considerations": [
+        "Good source of dietary fiber (especially when whole grain/unprocessed).",
+        "Contains carbohydrates for energy.",
+        "Low in fat.",
+        "Contains some natural sugars."
+      ],
+      "uncertainty_notes": "Estimates are based on a standard ear of corn (approx. 130g) and general nutritional data. Actual values depend on specific preparation and kernel size.",
+      "confidence": 0.95
+    }
+  },
+  {
+    "id": "20260416T130333_salmon-with-vegetables-and-cheese",
+    "created_at_utc": "2026-04-16T20:03:33.497037+00:00",
+    "source_image": "/storage/emulated/0/DCIM/Screenshots/Screenshot_20260415_142042_Google.jpg",
+    "model": "gemma4:e2b",
+    "analysis": {
+      "food_item": "Salmon with Vegetables and Cheese",
+      "food_category": "Main Course",
+      "serving_estimate": "One serving",
+      "ingredients_or_components": [
+        "Salmon fillet",
+        "Green beans",
+        "Tomatoes",
+        "Feta cheese (or similar white cheese)",
+        "Seeds (likely flax or mixed seeds)"
+      ],
+      "estimated_macros": {
+        "calories_kcal": 450,
+        "protein_g": 40,
+        "carbs_g": 25,
+        "fat_g": 25,
+        "fiber_g": 8,
+        "sugar_g": 5,
+        "sodium_mg": 450
+      },
+      "health_considerations": [
+        "Excellent source of Omega-3 fatty acids (from salmon).",
+        "Good source of protein.",
+        "Contains dairy (Feta cheese) and seeds.",
+        "Moderate in sodium (depending on cheese and seasoning).",
+        "Low in added sugars."
+      ],
+      "uncertainty_notes": "Estimates are based on visual assessment and standard portion sizes. Exact nutritional values depend heavily on the specific cut of salmon, amount of cheese used, and preparation method (oil/seasoning).",
+      "confidence": 0.85
+    }
+  },
+  {
+    "id": "20260420T090613_baked-goods-pastry",
+    "created_at_utc": "2026-04-20T00:06:13.785996+00:00",
+    "source_image": "/storage/emulated/0/Download/Quick Share/20260420_060322.jpg",
+    "model": "gemma4:e2b",
+    "analysis": {
+      "food_item": "Baked Goods/Pastry",
+      "food_category": "Dessert/Snack",
+      "serving_estimate": "One package/serving",
+      "ingredients_or_components": [
+        "Flour",
+        "Sugar",
+        "Fats (Butter/Oil)",
+        "Wheat Flour",
+        "Chocolate/Cocoa"
+      ],
+      "estimated_macros": {
+        "calories_kcal": 350,
+        "protein_g": 6,
+        "carbs_g": 45,
+        "fat_g": 15,
+        "fiber_g": 3,
+        "sugar_g": 25,
+        "sodium_mg": 150
+      },
+      "health_considerations": [
+        "Contains wheat and refined flour.",
+        "High in added sugar and saturated fat (depending on fat source).",
+        "Moderate fiber content.",
+        "Processed food."
+      ],
+      "uncertainty_notes": "The exact nutritional information is not visible on the packaging, so these estimates are based on typical baked goods composition. Serving size is estimated based on the visible package.",
+      "confidence": 0.7
+    }
+  }
+]

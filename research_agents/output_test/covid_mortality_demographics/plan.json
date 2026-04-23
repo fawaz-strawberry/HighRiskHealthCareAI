@@ -1,0 +1,7 @@
+{
+  "task_id": "covid_mortality_demographics",
+  "title": "Mortality Analysis by Age, Gender, and Race",
+  "collect_instructions": "Extract the following columns from patients.csv: Id, BIRTHDATE, DEATHDATE, RACE, GENDER. Filter the dataset to include only records where DEATHDATE is not null to identify deceased patients.",
+  "chart_instructions": "1. Bar chart: Mortality rate by Race (X-axis: RACE, Y-axis: Count of Deaths). 2. Grouped bar chart: Mortality rate by Gender and Race (X-axis: RACE, Y-axis: Mortality Rate, grouped by GENDER). 3. Histogram: Age distribution of deaths (X-axis: Age derived from BIRTHDATE/DEATHDATE, Y-axis: Count of Deaths).",
+  "report_instructions": "1. Overview of total COVID-19 mortality counts. 2. Mortality rates segmented by Race. 3. Mortality rates segmented by Gender within each racial group. 4. Age distribution analysis of mortality across different demographic groups."
+}

@@ -1,0 +1,7 @@
+{
+  "task_id": "covid_mortality_demographics",
+  "title": "Mortality Analysis by Age, Gender, and Race",
+  "collect_instructions": "Collect the columns BIRTHDATE, DEATHDATE, RACE, and GENDER from the patients.csv file.",
+  "chart_instructions": "Create a histogram showing the distribution of mortality by Age groups (calculated from BIRTHDATE and DEATHDATE). Create grouped bar charts showing the mortality rate segmented by Race and Gender.",
+  "report_instructions": "Report the overall mortality rate, and provide segmented mortality rates and counts broken down by Race, Gender, and Age groups."
+}

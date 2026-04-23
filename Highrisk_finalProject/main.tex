@@ -1,0 +1,136 @@
+\documentclass[sigconf]{acmart}
+
+\settopmatter{printfolios=true}
+
+\title{Exploring Local LLM Agents for Privacy-Preserving Healthcare Applications}
+
+\author{Your Name}
+\affiliation{
+  \institution{Your University}
+  \city{City}
+  \country{Country}
+}
+\email{your@email.com}
+
+\begin{abstract}
+Artificial Intelligence (AI) has had a profound impact on many aspects of healthcare. Effort is continuously being made to utilize models to help clinicians and researchers improve efficiency and outcomes across the healthcare industry. This includes using AI for health tracking and patient data parsing, leveraging large language models (LLMs) to facilitate faster research, automating administrative work, and helping doctors provide more explainable insights from medical data.
+
+Current paradigms heavily rely on very large language models hosted on cloud servers. This creates a potential single point of failure, especially if healthcare systems begin to depend heavily on these providers. Additionally, handling patient-sensitive data through third-party providers introduces privacy concerns.
+
+Thus, it would be beneficial to shift focus toward smaller, yet still capable, local LLMs. These models could potentially run on edge devices, allowing users to monitor their health and lifestyle habits without sacrificing privacy. If a doctor or clinician needs to get involved, an AI system could generate an immediate report to assist in identifying potential causes of illness. These systems could also help patients better understand diagnoses and prescriptions, especially given the complexity of medical terminology.
+
+In research settings, reliance on cloud-based providers is less critical, but similar risks remain. While smaller models are more prone to errors, this limitation can be mitigated through the use of LLM agents. These agents can repeatedly run tasks and experiments at a lower cost compared to cloud-based systems, making them a viable alternative for continuous monitoring and research workflows.
+\end{abstract}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+AI has significantly transformed healthcare by improving data processing, patient monitoring, and clinical decision-making. However, most current solutions rely heavily on large-scale cloud-hosted models. While powerful, these models introduce challenges related to cost, scalability, privacy, and reliability.
+
+One major issue is the dependency on external providers. If these services become unavailable, restricted, or too expensive, healthcare systems that rely on them may face disruptions. This is particularly concerning when dealing with sensitive patient data, where privacy and security are critical.
+
+To address these concerns, this project explores the use of smaller, locally deployed LLMs, particularly in the form of LLM agents. These systems aim to provide similar functionality while maintaining greater control over data and reducing reliance on external infrastructure.
+
+The goal of this project is to evaluate whether local LLM agents can effectively perform healthcare-related tasks such as patient monitoring, report generation, and basic diagnostic assistance. Additionally, this project examines the trade-offs between local and cloud-based models in terms of performance, cost, and safety.
+
+\section{Background / Related Work}
+
+LLM agent research has been at the forefront of AI development throughout late 2025 and into 2026. Tools such as Claude Code and Microsoft AutoGen aim to streamline the process of assigning tasks to multiple agents that can independently perform research and analysis. Additional frameworks, such as Agent Laboratory, attempt to simulate a “virtual” research lab where different agents operate with separate contexts and instructions.
+
+Modern LLMs are limited by their context window, which defines how much information can be processed at once. These windows can range from a few thousand to hundreds of thousands of tokens. As the context window fills, model performance often degrades. Additionally, LLMs are highly sensitive to prompt design. For example, instructing a model that it is a “PhD researcher” versus a “high school student” can produce significantly different outputs in terms of quality and depth.
+
+LLM agent architectures take advantage of this behavior by assigning specialized roles and contexts to different agents. This allows for more controlled and efficient task execution.
+
+Previous research has also examined the safety of LLM agents. These studies evaluate risks such as leaking sensitive information, spreading misinformation, violating legal constraints, or generating unsafe code or advice. Even advanced cloud-based models have shown limitations in this area, highlighting a lack of robustness and risk awareness in current systems.
+
+Another area of research focuses on LLM agents interacting directly with patients, similar to systems like Baymax. While promising, these systems still suffer from hallucinations, limitations in multimodal understanding, implementation challenges, and ethical concerns.
+
+Local models offer potential advantages in terms of privacy and user control. However, they must be implemented carefully to address limitations in performance and safety.
+
+\section{Methodology}
+
+For this experiment, we utilize a selection of smaller local LLMs and evaluate their ability to function as agents performing healthcare-related tasks. These tasks include analyzing dietary intake, processing biometric data, generating patient reports, and assisting with research workflows.
+
+\subsection{Meal and Biometric Tracking}
+
+The first portion of testing involves collecting food images and evaluating how consistently a local model can estimate the macronutrient content of meals. Each image is processed by the model, which outputs a structured JSON containing estimated macros.
+
+As more entries are added, a time-stamped dataset is created. This dataset is then fed back into the model with a new prompt to evaluate the user’s overall dietary habits and generate a report. This report may include feedback, suggestions for improvement, and an overall assessment of the user’s diet.
+
+In addition to dietary data, biometric data such as heart rate, step count, and other activity metrics are collected. These are combined with the meal data to form a comprehensive user profile. The model is then tasked with identifying potential health risks, suggesting improvements, and providing general feedback.
+
+To evaluate performance, the same tasks are performed using both local models and cloud-based models. This allows for a direct comparison in terms of accuracy and quality of output. Additionally, the use of agent-based workflows is tested to determine whether breaking tasks into smaller components improves the performance of local models.
+
+\subsection{Research Task Simulation}
+
+To further evaluate the capabilities of local LLM agents, a research-focused experiment is conducted using data related to SARS-CoV-2 (COVID-19). A network of agents is created, including a manager agent responsible for decomposing tasks into smaller scripts.
+
+Each agent specializes in a specific function, such as data collection, analysis, or visualization. These agents generate tools, charts, and measurements to analyze the data. The results are then compared to those produced by a larger, cloud-based model performing the same task in a single step.
+
+This experiment evaluates whether task decomposition and specialization can compensate for the limitations of smaller models.
+
+\subsection{Clinical Note Generation}
+
+Finally, we compare the ability of local and cloud-based models to generate patient discharge notes. These notes are also compared against notes written by a medical professional.
+
+This comparison allows us to evaluate the quality, accuracy, and completeness of the generated notes. It also provides insight into whether local models could assist clinicians by generating first drafts of documentation.
+
+Additionally, this experiment helps identify the rate of misinformation or hallucination in both local and cloud-based models, highlighting potential risks.
+
+\subsection{Workflow Overview}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\linewidth]{workflow.png}
+\caption{Overview of the local LLM agent workflow for healthcare tasks.}
+\end{figure}
+
+\section{Results}
+
+The results of the experiments will focus on comparing the performance of local LLM agents with cloud-based models across the different tasks. Key metrics include accuracy of predictions, quality of generated reports, consistency, and safety.
+
+Preliminary expectations suggest that local models will show reduced performance in complex reasoning tasks but may perform comparably when tasks are broken down into smaller components using agent-based workflows.
+
+\subsection{Local Food Tracker}
+Food tracking was the first experiment performed and it resulted in relatively decent results when given very simple and focused tasks. Despite being such a small model Gemma4 E2B was able to make predictions on images of food that it was given. The results looked like the following
+{place an image here}
+Gemma4 E2B was able to estimate ingredients and provide a confidence interval which is helpful for identifying what foods are easy or difficult to predict. The true implementation of the Gemma model remains the main bottle neck along with the difficulty of the problem itself.
+To judge food items through images alone it can be difficult to know the true ingrediant counts that are within the item. For example black coffee with 3 spoons of sugar will look very similar to black coffee with no spoons of sugar. This can have a heavy impact on the estimate of the amount of carbs present.
+Furthermore, blurry images or images with multiple food items fail to provide multi food answers as the model is heavily limited by the prompt it was given on request. This limitation makes it difficult to handle edge cases as can be seen in our example.
+A positive note is the actual generated report given by the model however, which featured all the food items within a well consolidated report. Despite its small size Gemma4 E2B still features a context length of 128k tokens which means we can feed a large json of food items. The report itself outlined 
+
+
+\subsection{Local Research Agent}
+
+As a local research agent, things were a little more difficult for the local model. These tasks were more complex in terms of understanding and despite having a thinking mode, the model wasn't able to reliably complete tasks. A small issue in the food task that become much more relevant in the local research agent is getting models running simply and straight forward on local devices. In my scenario I was running Gemma4 E2B on a Samsung Tab S10 ultra featuring 12 GB of usable ram. If I simply utilized cloud based models an API call would be more than sufficient. However to get an initial baseline running on an Android Tablet work had to be done to install a terminal like termux, host an ollama server on it, and then get the model running while ensuring that the Android Operating System didn't over allocate any memory causing the system/apps to crash which it so often did. In local settings such as this, many devices manage their own memory which can limit the control a researcher may have causing sudden unexpected crashes that can slow down effectiveness.
+
+Furthermore, even whn things did work, the Gemma4 E2B often failed to properly utilize the correct libraries rendering many of the graph and data collection attempts as failures. This thus required reworking the prompt, adding information where necessary, and testing continuously until things worked. The workflow itself highlighted in the methodology section previously did help a lot  allowing the model to focus on distinct focused tasks. However with this much focus, it does limit the flexibility of the model to do things like go out on the web and find information or potentially run some side experiments to come up with new data.
+
+In analyzing the exact outputs for each model we can begin with the manger agent which successfully Generated a set of instructions for the collector, chart, and reporter models for the given task of analyzing mortality rates based on race. It generated a plan.json that was fed into the structions of the other agents. The next agent that ran was the collector agent which worked on collecting data from our CSVs in order to enter that data into a JSON that could be more easily processed by the chart generator. The result was a python script that automatically ran when the agent was complete. On its own the python script was correct but only after correcting the prompt a couple of times after it had errors due to trying to convert Datetime objects into JSONs. Furthermore, the full set of Headers was given to the model as well as multi step processing of the Agent to find out the headers and avoid presuming required either another agent or creating a more sophisticated but likely brittle multi try agent which could continuously run scripts until it worked or got the information it needed. The next step was the chart agent which would load a sample entry given by the Collector agent and then output the charts necessary to visualize the results. In testing, this chart agent when given to large of a sample size of data points would fail to find a task Note {image something something here}. Thus only a single data entry is given which can generate a chart. Howevever even this chart may be mislabled and often times the python scripts fail due to library and up to date info on the latest python syntax or usage of these libraries. Because the agents can't search the web to research and understand the issues it makes it difficult to reliably get python scripts that work. The final piece of the agent researcher is the research report generator. This agent had more consistent success as it was able to generate Latex files that could be copied and pasted and then be compiled. The only thing that could have worked better here is unreliably generating the full Latex and only generating the individual sections. This however can likely be automated or further prompted for improved results. Overall the local researcher agents did produce a functionally correct solution but failed to produce anything meaningful enough for real world researchers. Simple chatbot prompting with a researcher at the wheel would be a more effective use of resources.
+
+\subsection{Clinical Doctor with Diagnosis Note Generation}
+
+For many doctors one of the major points of time consumption is the admnistration work of filling out paperwork and writing notes to keep track of or share information with those that need it. as such utilizing a local LLM to accomplish those initial diagnosis and note generation can allow doctors to receive a summary of a patients current symptoms along with potentially providing patients with an intial baseline on what they can expect so they can take steps to ensure they're in the best shape too. However utilizing local models to perform this task turned out to be largely ineffective without extensive and specific prompting. It's likely larger models would perform better but the Gemma4 model which wants reassurance for safety continually asks follow ups rather then quickly and effectively providing a diagnosis which could be used. This leads to the context length to grow and the model to "lose the plot" of being a doctor. This being said, the local LLM when prompted to provide answers rather then converse with the patient is capable of generating valid and relatively good information sources for a patient. LLMs do have a prepensity to hallucinate, however adding probability percentages and allowing for multiple answers means that Notes are not a gurantee down an incorrect path. This can be seen with the doofenshmirtz sample note which provides three different potential diagnoses and the risk involved with each. It also still specifies that a doctor would have to go in and continue to look in more to the situation.
+
+
+
+\section{Conclusion and Future Work}
+
+This project explores the feasibility of using local LLM agents for healthcare-related tasks. While these models may not match the performance of large cloud-based systems, they offer significant advantages in terms of privacy, cost, and accessibility. 
+
+Future work should focus on improving the reliability and safety of local models, particularly in patient-facing applications. Additional research could explore hybrid systems that combine local and cloud-based models to balance performance and privacy. In the near term with these models things can be done to improve the ability of the models. First is to break tasks further into individualized tasks that don't require as much of a context length fill. This would allow the model to have more time to utilize its thinking and get less confused by an overload of information. Focusing on simpler tasks and then saving those agents into their own files can make it easy to potentially use cloud based models simply to manage the calling of local subagents which preserves privacy as mentioned earlier. There are also an aresenal of new agent tools that are being developed which canbe tested and should make it easier to develop advanced agent workflows. 
+
+In the future and with continued AI research it is expected to improve the reliability, efficiency, and capabilities of any given local model. This can allow for more possibilities with a single local model assuming that continued improvements are not reliant purely on increasing model size. More specifically it is of great benefit to add a source of memory to models that can be used to evolve a model in a controlled fashion as a patient leaves and then may talke to the same chatbot sometime later. Models should also be capable of multimodality further than just image and text. Sound and video would rapidly help diagnoses of skin rashes or more physical sight based conditions instead of how a patient is feeling alone. Improvements to hardware design and capability can negate this issue as a scaled up model can generally hold more information then a smaller one and thus be more resilant to hallucinations too. 
+
+In the initial drafts of this project we set out to see if it was possible to utilize local models in difficult tasks that would normally be reserved to large local models. After extensive testing in three different categories, as a whole, models are capable of relatively advanced abilities that can functionally solve most tasks given to it. However these models are not super reliable nor can they be trusted to consistently give good results. They often fail to produce valid jsons when contexts increase, they can break an agent workflow by not following directions and getting distracted, and they struggle with multiple steps and reiteration. For patient local use and with good warnings they should be used in easy to use systems that are built out and prepped for failure responses from the model beyond "model failed to return a valid json". Good design with the application layer to ensure users are aware of the extensive memory use of local models should also be noted as currently opening applications aside from the one the model is running on can cause the model to crash due to agressive memory management from operating system. This can be solved through companies adding more ram to lower end devices which can come with a higher demand of these local models.
+
+The benefits of a local model being utilized for a multi agent system that can perform the above tests is very large and likely more so then any cloud based model. Patients can be less beholden to larger insurance companies that will likely want to see the results of the types of health questions asked to AI. They will also be more aware of their health and its importance through merely interafting with everyday, Finally they can learn about and get more information that was previously reserved to researchers or doctors in a much more digestable fashion(although it can be argued this poses its own risks). Further development should be a priority especially in the field of Healthcare.
+
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+
+\end{document}

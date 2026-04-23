@@ -1,0 +1,23 @@
+[
+  {
+    "Name": "doofenshmirtz",
+    "DateAndTime": "1704067200",
+    "InputFromUser": "my name is doofenshmirtz and i have a really bad pain in my ear after i got blasted with my bacteria-inator...",
+    "ResponseToUser": "Hello Mr. Doofenshmirtz. I understand you are experiencing severe pain in your ear following an incident. I need more details to assess your condition. Can you describe the pain for me? Where exactly is the pain located, how severe is it on a scale of 1 to 10, and when did this pain start?",
+    "AddToNotes": "Patient reports severe ear pain following an incident involving a 'bacteria-inator'. Requires further history regarding pain location, severity, and onset time."
+  },
+  {
+    "Name": "Doofenshmirtz",
+    "DateAndTime": "1701388800",
+    "InputFromUser": "Doctor sung jinwoo, my name is doofenshmirtz and i have a really bad pain in my ear after i got blasted with my bacteria-inator by an altercation involving Perry the Platypus",
+    "ResponseToUser": "Mr. Doofenshmirtz, I understand you are experiencing severe pain in your ear following an altercation. To help me assess the situation, can you describe the pain in more detail? Is the pain sharp, dull, throbbing, or constant? Are there any other symptoms, such as hearing loss, fever, dizziness, or discharge from the ear?",
+    "AddToNotes": "Patient reports severe ear pain following an incident involving a 'bacteria-inator'. Requires further history regarding pain characteristics, associated symptoms (hearing, fever, discharge), and the nature of the altercation."
+  },
+  {
+    "Name": "Doofenshmirtz",
+    "DateAndTime": "1704067200",
+    "InputFromUser": "It's throbbing and i have some dizziness and a temperature of 100",
+    "ResponseToUser": "Thank you for providing those details. Throbbing pain, dizziness, and a fever of 100 degrees suggest an infection or inflammation. Can you tell me if you have any discharge from the ear, and is the pain worse when you move your head or chew?",
+    "AddToNotes": "Patient reports throbbing ear pain, dizziness, and a temperature of 100\u00b0F following an altercation. No discharge reported yet."
+  }
+]
