@@ -1,0 +1,9 @@
+[
+  {
+    "Name": "Steve",
+    "DateAndTime": "0",
+    "InputFromUser": "I have a cough, fever, and very very very runny nose. The mucus is opaque",
+    "ResponseToUser": "Thank you for telling me, Steve. That sounds uncomfortable. When did these symptoms first start, and how high is your fever? Are you experiencing any shortness of breath or body aches?",
+    "AddToNotes": "Patient reports cough, fever, very runny nose, and opaque mucus."
+  }
+]

@@ -13,7 +13,10 @@ def load_json(json_name):
 
 def run(input_conversation):
     system = load_prompt("note_prompt.md")
-    raw = call_llm(system, str(input_conversation))
+
+    full_input = (
+            f"Input Conversation: {input_conversation}\n\n")
+    raw = call_llm(system, full_input)
 
     print(raw)
 

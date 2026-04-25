@@ -1,7 +1,16 @@
-{
+[
+  {
+    "Name": null,
+    "DateAndTime": 1704067200,
+    "InputFromUser": "Hello doctor, my name is Steve and I feel very very sick",
+    "ResponseToUser": "Hello Steve. I am sorry to hear that you are feeling very sick. To help me understand what is going on, could you please tell me more about your symptoms? When did you first start feeling unwell, and can you describe exactly what you are experiencing?",
+    "AddToNotes": "Patient introduced self as Steve and reports feeling very sick."
+  },
+  {
     "Name": null,
     "DateAndTime": "1704067200",
     "InputFromUser": "No other symptoms, but they started last week",
     "ResponseToUser": "Thank you for that information. Since the symptoms started last week, can you tell me approximately what your temperature has been, and if you have had any difficulty breathing or any body aches at all? Also, how severe is the cough?",
     "AddToNotes": "Patient presents with cough, fever, very runny nose, and opaque mucus. Symptoms started last week. No other reported symptoms."
-}
+  }
+]
